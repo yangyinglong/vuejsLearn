@@ -4,6 +4,7 @@
     <p>HELLO, VUEJS</p>
     <!-- <ComputedVue />
     <WatchVue /> -->
+    <IfElseVue />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 
 import ComputedVue from "./components/computedWatch/ComputedVue"
 // import WatchVue from "./components/computedWatch/WatchVue"
+import IfElseVue from "./components/ifElse/IfElseVue"
 
 export default {
   name: 'App',
@@ -21,6 +23,7 @@ export default {
   components:{
     ComputedVue,
     // WatchVue
+    IfElseVue
   }
 }
 </script>

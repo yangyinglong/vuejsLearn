@@ -109,3 +109,43 @@ Class 与 Style 绑定
 
 ```
 
+条件渲染
+```
+v-if
+v-else-if
+v-else
+
+v-else，v-else-if 也必须紧跟在带 v-if 或者 v-else-if 的元素之后。
+用 key 管理可复用的元素
+例如 ./components/ifElse/ifElseVue.vue 中，加入 key 之后，两个元素是完全独立的，如果不加 key ，input 标签是同一个
+
+v-show
+一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好
+```
+
+列表渲染
+```
+v-for="item in items"
+v-for="(item, index) in items"
+{{ item.message}} - {{ index }}
+其中 data: {
+    	items: [
+      		{ message: 'Foo' },
+      		{ message: 'Bar' }
+    	]
+  	}
+也可以通过一个对象的属性来迭代
+v-for="value in object"
+{{value}}
+data: {
+    object: {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    }
+}
+可以用两个参数来迭代
+v-for="(value, key) in object"
+也可以用三个参数来迭代
+v-for="(value, key, index) in objece"
+```
