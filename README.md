@@ -1,5 +1,6 @@
 # vuelearn
 
+```
 vue init webpack vueLearn
 在ubuntu环境下，用上面这句初始化的时候，会出错，所以我用了
 sudo vue init webpack vueLearn
@@ -7,6 +8,7 @@ sudo vue init webpack vueLearn
 所以初始化项目之后，把文件的所属分配给 普通用户
 sudo chown -R 用户名 vueLearn/
 sudo chgrp -R 用户名 vueLearn/
+```
 
 > A Vue.js project
 
