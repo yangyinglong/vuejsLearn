@@ -1,17 +1,26 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <button v-bind:disabled="isButtonDisabled">Button</button>
+    <p>HELLO, VUEJS</p>
+    <!-- <ComputedVue />
+    <WatchVue /> -->
   </div>
 </template>
 
 <script>
+
+import ComputedVue from "./components/computedWatch/ComputedVue"
+// import WatchVue from "./components/computedWatch/WatchVue"
+
 export default {
   name: 'App',
   data() {
     return {
-      isButtonDisabled: false
     }
+  },
+  components:{
+    ComputedVue,
+    // WatchVue
   }
 }
 </script>

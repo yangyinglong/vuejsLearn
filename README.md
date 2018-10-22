@@ -1,6 +1,12 @@
 # vuelearn
 
 vue init webpack vueLearn
+在ubuntu环境下，用上面这句初始化的时候，会出错，所以我用了
+sudo vue init webpack vueLearn
+这样初始化的项目所属 root，用 sublime 编写的时候，一直要用到 root 权限，很不方便
+所以初始化项目之后，把文件的所属分配给 普通用户
+sudo chown -R 用户名 vueLearn/
+sudo chgrp -R 用户名 vueLearn/
 
 > A Vue.js project
 
@@ -53,6 +59,51 @@ https://cn.vuejs.org/
 
 计算属性和侦听器
 ```
+对于任何复杂逻辑，都应当使用计算属性
+computed: {
+	reversedMessage: function() {
+		return this.message.split('').reverse().join('')
+	}
+}
+其中， reversedMessage 就是一个计算属性，可以直接使用 例如 {{ reversedMessage }}，当 message 发生改变时，reversedMessage 也会改变
+计算属性和方法的比较：
+	我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，不同的是计算属性是基于它们的依赖进行缓存的。只在相关依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。
+	方法的定义：
+		methods: {
+		  reversedMessage: function () {
+		    return this.message.split('').reverse().join('')
+		  }
+		}
+		使用时， {{ reversedMessage() }}
+计算属性的 setter
+	计算属性默认只有 getter ，不过在需要时你也可以提供一个 setter ：
+		computed: {
+		  fullName: {
+		    // getter
+		    get: function () {
+		      return this.firstName + ' ' + this.lastName
+		    },
+		    // setter
+		    set: function (newValue) {
+		      var names = newValue.split(' ')
+		      this.firstName = names[0]
+		      this.lastName = names[names.length - 1]
+		    }
+		  }
+		}
+
+侦听器：
+	当需要在数据变化时执行异步或开销较大的操作时，需要 watch 来相应数据的变化
+```
+
+Class 与 Style 绑定
+```
+1. 我们可以传给 v-bind:class 一个对象，以动态地切换 class
+2. 你可以在对象中传入更多属性来动态切换多个 class，同时，绑定的数据对象不必内联定义在模板里，可以定义在 data 中
+3. 我们也可以在这里绑定一个返回对象的计算属性
+4. 我们可以把一个数组传给 v-bind:class，以应用一个 class 列表
+5. 根据条件切换列表中的 class，可以用三元表达式
+6. 也可以用在组件上
 
 ```
 
