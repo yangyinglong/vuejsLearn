@@ -5,6 +5,7 @@
     <!-- <ComputedVue />
     <WatchVue /> -->
     <IfElseVue />
+    <FormVue />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import ComputedVue from "./components/computedWatch/ComputedVue"
 // import WatchVue from "./components/computedWatch/WatchVue"
 import IfElseVue from "./components/ifElse/IfElseVue"
+import FormVue from "./components/form/FormVue.vue"
 
 export default {
   name: 'App',
@@ -23,7 +25,8 @@ export default {
   components:{
     ComputedVue,
     // WatchVue
-    IfElseVue
+    IfElseVue,
+    FormVue
   }
 }
 </script>

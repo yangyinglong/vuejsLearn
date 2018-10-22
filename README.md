@@ -149,3 +149,10 @@ v-for="(value, key) in object"
 也可以用三个参数来迭代
 v-for="(value, key, index) in objece"
 ```
+
+表单输入绑定
+```
+绑定文本、多行文本
+复选框和单选按钮的绑定
+
+```
