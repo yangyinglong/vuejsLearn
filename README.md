@@ -1,5 +1,7 @@
 # vuelearn
 
+vue init webpack vueLearn
+
 > A Vue.js project
 
 ## Build Setup
@@ -23,7 +25,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 
-
+https://cn.vuejs.org/
 
 模板语法
 ```
